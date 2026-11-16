@@ -2,14 +2,19 @@
     "name": "jeffersongoncalves/filament-lgpd-incidents",
     "description": "Filament plugin for laravel-lgpd-incidents: register LGPD security incidents, assess the risk and track the 3-business-day ANPD and data subject notification deadline from your panel.",
     "keywords": [
+        "jeffersongoncalves",
         "laravel",
         "filament",
         "filament-plugin",
-        "filament-lgpd-incidents"
+        "lgpd",
+        "incident",
+        "data-breach",
+        "security-incident",
+        "anpd",
+        "privacy"
     ],
     "homepage": "https://github.com/jeffersongoncalves/filament-lgpd-incidents",
     "license": "MIT",
-    "type": "library",
     "authors": [
         {
             "name": "Jefferson Gonçalves",
@@ -19,35 +24,40 @@
     ],
     "require": {
         "php": "^8.2",
-        "filament/filament": "^5.0",
+        "filament/filament": "^5.3",
+        "jeffersongoncalves/filament-plugin-core": "^3.0",
+        "jeffersongoncalves/laravel-lgpd-incidents": "^1.0",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
+        "jeffersongoncalves/pest-plugin-database-migrations": "^1.0",
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
         "orchestra/testbench": "^10.0|^11.0",
         "pestphp/pest": "^3.0|^4.0",
-        "larastan/larastan": "^2.0|^3.0",
-        "laravel/pint": "^1.0"
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0"
     },
     "autoload": {
         "psr-4": {
-            "JeffersonGoncalves\\Filament\\LgpdIncidents\\": "src/"
+            "JeffersonGoncalves\\Filament\\LgpdIncidents\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JeffersonGoncalves\\Filament\\LgpdIncidents\\Tests\\": "tests/"
+            "JeffersonGoncalves\\Filament\\LgpdIncidents\\Tests\\": "tests"
         }
     },
     "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint",
-        "analyse": "vendor/bin/phpstan analyse"
+        "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
         }
     },
     "extra": {
