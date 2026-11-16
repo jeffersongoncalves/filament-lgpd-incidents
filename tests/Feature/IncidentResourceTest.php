@@ -96,6 +96,15 @@ it('edits the description but never the discovery date', function () {
         ->discovered_at->toDateTimeString()->toBe('2026-11-13 10:00:00');
 });
 
+it('offers the same actions on the table rows', function () {
+    $incident = LgpdIncidents::open('Backup exposed');
+
+    Livewire::test(ListIncidents::class)
+        ->callTableAction('assess', $incident, ['risk' => 'low']);
+
+    expect($incident->fresh()->risk)->toBe(Risk::Low);
+});
+
 it('applies the fluent plugin options', function () {
     LgpdIncidentsPlugin::get()->navigationGroup('LGPD')->slug('security-incidents');
 
