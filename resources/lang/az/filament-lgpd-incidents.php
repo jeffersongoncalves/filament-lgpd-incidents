@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => 'Subyektlərə bildirilib',
         'notified_at' => 'Bildirilib',
         'closed_at' => 'Bağlanıb',
+        'partial' => 'Qismən bildiriş',
+        'complemented_at' => 'Əlavə məlumat göndərilib',
     ],
 
     'help' => [
         'discovered_at' => 'İnsidentin şəxsi məlumatlara təsir etdiyini nə vaxt öyrəndiniz. 3 iş günü müddəti buradan başlayır və sonra dəyişdirilə bilməz.',
+        'partial' => 'Hələ məlumat çatışmırsa aktiv edin: əlavə məlumat 20 iş günü ərzində göndərilməlidir (Qərar CD/ANPD 15/2024, mad. 6, §3).',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => 'Bildiriş gözləyir',
         'overdue' => 'Gecikmiş',
         'closed' => 'Bağlı',
+        'complement_overdue' => 'Əlavə məlumat gecikir',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => 'Bağla',
             'success' => 'İnsident bağlandı.',
+        ],
+        'complement' => [
+            'label' => 'Əlavə məlumat ANPD-yə göndərildi',
+            'description' => 'Çatışmayan məlumatı :date tarixinədək ANPD-yə göndərin.',
+            'success' => 'Əlavə məlumat qeydə alındı.',
         ],
     ],
 ];

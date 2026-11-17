@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => 'Betrokkenen geïnformeerd op',
         'notified_at' => 'Gemeld op',
         'closed_at' => 'Afgesloten op',
+        'partial' => 'Gedeeltelijke melding',
+        'complemented_at' => 'Aanvulling verzonden op',
     ],
 
     'help' => [
         'discovered_at' => 'Wanneer je hoorde dat het incident persoonsgegevens trof. De termijn van 3 werkdagen begint hier en kan later niet worden gewijzigd.',
+        'partial' => 'Zet aan als er nog gegevens ontbreken: de aanvulling is dan binnen 20 werkdagen verschuldigd (Res. CD/ANPD 15/2024, art. 6, §3).',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => 'Melding open',
         'overdue' => 'Te laat',
         'closed' => 'Afgesloten',
+        'complement_overdue' => 'Aanvulling te laat',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => 'Afsluiten',
             'success' => 'Incident afgesloten.',
+        ],
+        'complement' => [
+            'label' => 'Aanvulling naar de ANPD verzonden',
+            'description' => 'Stuur de ontbrekende informatie vóór :date naar de ANPD.',
+            'success' => 'Aanvulling vastgelegd.',
         ],
     ],
 ];

@@ -23,10 +23,13 @@ return [
         'anpd_protocol' => 'ANPD protocol',
         'subjects_notified_at' => 'Data subjects notified at',
         'notified_at' => 'Notified at',
+        'partial' => 'Partial notice',
+        'complemented_at' => 'Complement sent at',
         'closed_at' => 'Closed at',
     ],
 
     'help' => [
+        'partial' => 'Turn on when details are still missing: the complementary information is then due within 20 business days (Res. CD/ANPD 15/2024, art. 6, §3).',
         'discovered_at' => 'When you learned the incident affected personal data. The 3-business-day deadline starts here and cannot be changed later.',
     ],
 
@@ -37,6 +40,7 @@ return [
     ],
 
     'status' => [
+        'complement_overdue' => 'Complement overdue',
         'open' => 'Open',
         'pending' => 'Notification pending',
         'overdue' => 'Overdue',
@@ -56,6 +60,11 @@ return [
         'notify_subjects' => [
             'label' => 'Data subjects notified',
             'success' => 'Data subject notification recorded.',
+        ],
+        'complement' => [
+            'label' => 'Complement sent to the ANPD',
+            'description' => 'Send the missing information to the ANPD by :date.',
+            'success' => 'Complement recorded.',
         ],
         'close' => [
             'label' => 'Close',
