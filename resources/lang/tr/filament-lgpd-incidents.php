@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => 'İlgili kişilere bildirilme',
         'notified_at' => 'Bildirilme',
         'closed_at' => 'Kapanma',
+        'partial' => 'Kısmi bildirim',
+        'complemented_at' => 'Ek bilgi gönderilme tarihi',
     ],
 
     'help' => [
         'discovered_at' => 'Olayın kişisel verileri etkilediğini ne zaman öğrendiğiniz. 3 iş günlük süre buradan başlar ve sonradan değiştirilemez.',
+        'partial' => 'Ayrıntılar henüz eksikse açın: ek bilgi 20 iş günü içinde gönderilmelidir (Karar CD/ANPD 15/2024, md. 6, §3).',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => 'Bildirim bekliyor',
         'overdue' => 'Süresi geçmiş',
         'closed' => 'Kapalı',
+        'complement_overdue' => 'Ek bilgi gecikti',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => 'Kapat',
             'success' => 'Olay kapatıldı.',
+        ],
+        'complement' => [
+            'label' => 'Ek bilgi ANPD\'ye gönderildi',
+            'description' => 'Eksik bilgileri :date tarihine kadar ANPD\'ye gönderin.',
+            'success' => 'Ek bilgi kaydedildi.',
         ],
     ],
 ];

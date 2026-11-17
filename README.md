@@ -19,6 +19,7 @@ The Filament panel for [laravel-lgpd-incidents](https://github.com/jeffersongonc
 - Register an incident: the deadline is set from the discovery date, skipping weekends and Brazilian holidays. The discovery date is locked afterwards.
 - **Assess risk** (low or relevant). An incident assessed as low risk doesn't need to be communicated.
 - Record the **ANPD notification** (with protocol) and the **data subject notification**, then **close** with the measures taken.
+- **Partial notice:** when details are still missing, tick *Partial notice* on the ANPD notification. The complementary information is then due within 20 business days (Res. CD/ANPD 15/2024, art. 6, §3). Record it with **Complement sent to the ANPD**. A late complement shows up as "Complement overdue".
 - Status badge (open, notification pending, overdue, closed), "Notification pending" and "Overdue" filters, and a navigation badge with pending incidents (red when one is overdue).
 - 19 languages.
 
@@ -39,6 +40,8 @@ composer require jeffersongoncalves/filament-lgpd-incidents:"^1.0"
 php artisan vendor:publish --tag="lgpd-incidents-migrations"
 php artisan migrate
 ```
+
+Upgrading from an earlier release? Publish and run the migrations again: laravel-lgpd-incidents 1.1 adds the complement columns.
 
 ## Usage
 

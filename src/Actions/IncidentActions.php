@@ -7,6 +7,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Notifications\Notification;
 use Filament\Tables\Actions\Action as TableAction;
 use JeffersonGoncalves\Filament\LgpdIncidents\Support\Labels;
@@ -25,7 +26,7 @@ class IncidentActions
      */
     public static function all(string $class = Action::class): array
     {
-        return [static::assess($class), static::notifyAnpd($class), static::notifySubjects($class), static::close($class)];
+        return [static::assess($class), static::notifyAnpd($class), static::complement($class), static::notifySubjects($class), static::close($class)];
     }
 
     public static function assess(string $class = Action::class): Action|TableAction
@@ -65,10 +66,33 @@ class IncidentActions
                     ->label(__('filament-lgpd-incidents::filament-lgpd-incidents.fields.notified_at'))
                     ->default(now())
                     ->required(),
+                Toggle::make('partial')
+                    ->label(__('filament-lgpd-incidents::filament-lgpd-incidents.fields.partial'))
+                    ->helperText(__('filament-lgpd-incidents::filament-lgpd-incidents.help.partial')),
             ])
             ->action(function (Incident $record, array $data): void {
-                app(IncidentManager::class)->notifyAnpd($record, $data['protocol'] ?? null, Labels::date($data['at']));
+                app(IncidentManager::class)->notifyAnpd($record, $data['protocol'] ?? null, Labels::date($data['at']), (bool) ($data['partial'] ?? false));
                 static::done('notify_anpd');
+            });
+    }
+
+    public static function complement(string $class = Action::class): Action|TableAction
+    {
+        return $class::make('complement')
+            ->label(__('filament-lgpd-incidents::filament-lgpd-incidents.actions.complement.label'))
+            ->icon('heroicon-o-document-plus')
+            ->color('info')
+            ->visible(fn (Incident $record): bool => $record->owesComplement())
+            ->modalDescription(fn (Incident $record): string => __('filament-lgpd-incidents::filament-lgpd-incidents.actions.complement.description', ['date' => $record->complement_due_at?->format('d/m/Y')]))
+            ->form([
+                DateTimePicker::make('at')
+                    ->label(__('filament-lgpd-incidents::filament-lgpd-incidents.fields.complemented_at'))
+                    ->default(now())
+                    ->required(),
+            ])
+            ->action(function (Incident $record, array $data): void {
+                app(IncidentManager::class)->complement($record, Labels::date($data['at']));
+                static::done('complement');
             });
     }
 

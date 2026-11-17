@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => 'Interessati informati il',
         'notified_at' => 'Notificato il',
         'closed_at' => 'Chiuso il',
+        'partial' => 'Notifica parziale',
+        'complemented_at' => 'Integrazione inviata il',
     ],
 
     'help' => [
         'discovered_at' => 'Quando hai saputo che l\'incidente ha riguardato dati personali. Il termine di 3 giorni lavorativi parte da qui e non può essere modificato in seguito.',
+        'partial' => 'Attiva se mancano ancora informazioni: l\'integrazione va inviata entro 20 giorni lavorativi (Ris. CD/ANPD 15/2024, art. 6, §3).',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => 'Notifica in sospeso',
         'overdue' => 'Scaduto',
         'closed' => 'Chiuso',
+        'complement_overdue' => 'Integrazione in ritardo',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => 'Chiudi',
             'success' => 'Incidente chiuso.',
+        ],
+        'complement' => [
+            'label' => 'Integrazione inviata all\'ANPD',
+            'description' => 'Invia all\'ANPD le informazioni mancanti entro il :date.',
+            'success' => 'Integrazione registrata.',
         ],
     ],
 ];

@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => 'Powiadomiono osoby',
         'notified_at' => 'Powiadomiono',
         'closed_at' => 'Zamknięto',
+        'partial' => 'Zgłoszenie częściowe',
+        'complemented_at' => 'Uzupełnienie wysłano',
     ],
 
     'help' => [
         'discovered_at' => 'Kiedy dowiedziałeś się, że incydent dotyczył danych osobowych. Termin 3 dni roboczych biegnie od tej chwili i nie można go później zmienić.',
+        'partial' => 'Włącz, gdy wciąż brakuje informacji: uzupełnienie należy wtedy przesłać w ciągu 20 dni roboczych (Uchw. CD/ANPD 15/2024, art. 6, §3).',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => 'Oczekuje na zgłoszenie',
         'overdue' => 'Po terminie',
         'closed' => 'Zamknięty',
+        'complement_overdue' => 'Uzupełnienie po terminie',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => 'Zamknij',
             'success' => 'Incydent zamknięty.',
+        ],
+        'complement' => [
+            'label' => 'Uzupełnienie wysłane do ANPD',
+            'description' => 'Prześlij brakujące informacje do ANPD do :date.',
+            'success' => 'Uzupełnienie zarejestrowane.',
         ],
     ],
 ];

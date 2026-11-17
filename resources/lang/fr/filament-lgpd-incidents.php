@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => 'Personnes concernées informées le',
         'notified_at' => 'Notifié le',
         'closed_at' => 'Clôturé le',
+        'partial' => 'Notification partielle',
+        'complemented_at' => 'Complément envoyé le',
     ],
 
     'help' => [
         'discovered_at' => 'Quand vous avez appris que l\'incident touchait des données personnelles. Le délai de 3 jours ouvrables commence ici et ne peut plus être modifié.',
+        'partial' => 'À activer s\'il manque encore des informations : le complément est alors dû sous 20 jours ouvrés (Rés. CD/ANPD 15/2024, art. 6, §3).',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => 'Notification en attente',
         'overdue' => 'En retard',
         'closed' => 'Clôturé',
+        'complement_overdue' => 'Complément en retard',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => 'Clôturer',
             'success' => 'Incident clôturé.',
+        ],
+        'complement' => [
+            'label' => 'Complément envoyé à l\'ANPD',
+            'description' => 'Envoyez les informations manquantes à l\'ANPD avant le :date.',
+            'success' => 'Complément enregistré.',
         ],
     ],
 ];

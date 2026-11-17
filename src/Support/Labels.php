@@ -36,6 +36,7 @@ class Labels
             $incident->closed_at !== null => 'closed',
             $incident->isOverdue() => 'overdue',
             $incident->isPending() => 'pending',
+            $incident->isComplementOverdue() => 'complement_overdue',
             default => 'open',
         };
     }
@@ -45,6 +46,7 @@ class Labels
         return match ($status) {
             'closed' => 'gray',
             'overdue' => 'danger',
+            'complement_overdue' => 'danger',
             'pending' => 'warning',
             default => 'info',
         };
