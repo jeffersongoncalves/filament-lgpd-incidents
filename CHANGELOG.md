@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.0 - 2026-11-17
+
+- Partial ANPD notice (Res. CD/ANPD 15/2024, art. 6, §3): a *Partial notice* toggle on **ANPD notified** schedules the complementary information 20 business days after the notice; record it with the new **Complement sent to the ANPD** action. A late complement shows as "Complement overdue".
+- 19 languages updated.
+- Requires laravel-lgpd-incidents ^1.1: publish and run its migrations again (`php artisan vendor:publish --tag=lgpd-incidents-migrations && php artisan migrate`).
+
 ## 1.1.0 - 2026-11-16
 
 - Translations for 17 more languages: ar, az, de, es, fa, fr, hi, it, ja, nl, pl, pt, ru, tr, uk, uz, zh_CN (19 in total with en and pt_BR)
