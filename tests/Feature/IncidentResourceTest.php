@@ -74,6 +74,27 @@ it('walks an incident through assessment, notifications and closing', function (
         ->closed_at->not->toBeNull();
 });
 
+it('records a partial ANPD notice and its complement', function () {
+    $incident = LgpdIncidents::assess(LgpdIncidents::open('Backup exposed'), Risk::Relevant);
+    LgpdIncidents::notifySubjects($incident);
+
+    Livewire::test(ViewIncident::class, ['record' => $incident->getKey()])
+        ->assertActionHidden('complement')
+        ->callAction('notifyAnpd', ['protocol' => 'ANPD-42', 'at' => '2026-11-16 09:00:00', 'partial' => true]);
+
+    expect($incident->fresh()->complement_due_at->toDateString())->toBe('2026-12-15');
+
+    $this->travelTo(Carbon::parse('2026-12-16'));
+
+    Livewire::test(ListIncidents::class)->assertSee('Complement overdue');
+
+    Livewire::test(ViewIncident::class, ['record' => $incident->getKey()])
+        ->callAction('complement', ['at' => '2026-12-16 10:00:00'])
+        ->assertActionHidden('complement');
+
+    expect($incident->fresh()->owesComplement())->toBeFalse();
+});
+
 it('hides the notifications for low-risk incidents', function () {
     $incident = LgpdIncidents::assess(LgpdIncidents::open('Lost encrypted laptop'), Risk::Low);
 

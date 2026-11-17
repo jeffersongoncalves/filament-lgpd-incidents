@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => 'Subyektlarga xabar berilgan',
         'notified_at' => 'Xabar berilgan',
         'closed_at' => 'Yopilgan',
+        'partial' => 'Qisman xabarnoma',
+        'complemented_at' => 'Qo\'shimcha ma\'lumot yuborilgan',
     ],
 
     'help' => [
         'discovered_at' => 'Hodisa shaxsiy ma\'lumotlarga ta\'sir qilganini qachon bildingiz. 3 ish kunlik muddat shu yerdan boshlanadi va keyin o\'zgartirib bo\'lmaydi.',
+        'partial' => 'Ma\'lumotlar hali yetishmasa yoqing: qo\'shimcha ma\'lumot 20 ish kuni ichida yuborilishi kerak (CD/ANPD 15/2024 qarori, 6-modda, §3).',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => 'Xabar kutilmoqda',
         'overdue' => 'Muddati o\'tgan',
         'closed' => 'Yopilgan',
+        'complement_overdue' => 'Qo\'shimcha ma\'lumot kechikdi',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => 'Yopish',
             'success' => 'Hodisa yopildi.',
+        ],
+        'complement' => [
+            'label' => 'Qo\'shimcha ma\'lumot ANPDga yuborildi',
+            'description' => 'Yetishmayotgan ma\'lumotlarni :date gacha ANPDga yuboring.',
+            'success' => 'Qo\'shimcha ma\'lumot qayd etildi.',
         ],
     ],
 ];

@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => 'データ主体通知日時',
         'notified_at' => '通知日時',
         'closed_at' => '完了日時',
+        'partial' => '部分的な通知',
+        'complemented_at' => '補足情報の送付日時',
     ],
 
     'help' => [
         'discovered_at' => 'インシデントが個人データに影響したと認知した日時です。3 営業日の期限はここから始まり、後から変更できません。',
+        'partial' => '詳細がまだ不足している場合にオンにします。補足情報は20営業日以内に提出が必要です（CD/ANPD決議15/2024 第6条§3）。',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => '通知待ち',
         'overdue' => '期限切れ',
         'closed' => '完了',
+        'complement_overdue' => '補足情報の期限超過',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => '完了にする',
             'success' => 'インシデントを完了しました。',
+        ],
+        'complement' => [
+            'label' => 'ANPDに補足情報を送付',
+            'description' => ':date までに不足している情報をANPDに送付してください。',
+            'success' => '補足情報を記録しました。',
         ],
     ],
 ];

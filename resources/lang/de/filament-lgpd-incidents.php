@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => 'Betroffene informiert am',
         'notified_at' => 'Gemeldet am',
         'closed_at' => 'Abgeschlossen am',
+        'partial' => 'Teilmeldung',
+        'complemented_at' => 'Ergänzung gesendet am',
     ],
 
     'help' => [
         'discovered_at' => 'Wann Sie erfahren haben, dass der Vorfall personenbezogene Daten betrifft. Die Frist von 3 Werktagen beginnt hier und kann später nicht geändert werden.',
+        'partial' => 'Aktivieren, wenn noch Angaben fehlen: Die Ergänzung ist dann binnen 20 Arbeitstagen fällig (Res. CD/ANPD 15/2024, Art. 6, §3).',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => 'Meldung ausstehend',
         'overdue' => 'Überfällig',
         'closed' => 'Abgeschlossen',
+        'complement_overdue' => 'Ergänzung überfällig',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => 'Abschließen',
             'success' => 'Vorfall abgeschlossen.',
+        ],
+        'complement' => [
+            'label' => 'Ergänzung an die ANPD gesendet',
+            'description' => 'Senden Sie die fehlenden Angaben bis :date an die ANPD.',
+            'success' => 'Ergänzung erfasst.',
         ],
     ],
 ];

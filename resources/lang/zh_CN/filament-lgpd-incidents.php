@@ -24,10 +24,13 @@ return [
         'subjects_notified_at' => '已通知数据主体时间',
         'notified_at' => '通知时间',
         'closed_at' => '关闭时间',
+        'partial' => '部分通报',
+        'complemented_at' => '补充信息发送时间',
     ],
 
     'help' => [
         'discovered_at' => '你得知事件影响个人数据的时间。3 个工作日的期限从此开始，之后无法修改。',
+        'partial' => '尚缺信息时开启：补充信息须在 20 个工作日内提交（CD/ANPD 第 15/2024 号决议第 6 条 §3）。',
     ],
 
     'risk' => [
@@ -41,6 +44,7 @@ return [
         'pending' => '待通知',
         'overdue' => '已逾期',
         'closed' => '已关闭',
+        'complement_overdue' => '补充信息逾期',
     ],
 
     'actions' => [
@@ -60,6 +64,11 @@ return [
         'close' => [
             'label' => '关闭',
             'success' => '事件已关闭。',
+        ],
+        'complement' => [
+            'label' => '已向 ANPD 发送补充信息',
+            'description' => '请在 :date 前向 ANPD 发送缺失的信息。',
+            'success' => '已记录补充信息。',
         ],
     ],
 ];
