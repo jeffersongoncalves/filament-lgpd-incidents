@@ -20,7 +20,7 @@ The Filament panel for [laravel-lgpd-incidents](https://github.com/jeffersongonc
 - **Assess risk** (low or relevant). An incident assessed as low risk doesn't need to be communicated.
 - Record the **ANPD notification** (with protocol) and the **data subject notification**, then **close** with the measures taken.
 - Status badge (open, notification pending, overdue, closed), "Notification pending" and "Overdue" filters, and a navigation badge with pending incidents (red when one is overdue).
-- English and Brazilian Portuguese.
+- 19 languages.
 
 ## Compatibility
 
